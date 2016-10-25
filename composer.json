@@ -1,12 +1,12 @@
 {
-    "name": "hootlex/laravel-friendships",
+    "name": "tallium-inc/laravel-friendships",
     "description": "This package gives Eloquent models the ability to manage their friendships.",
     "keywords": ["laravel", "friendships", "friend-system", "friends", "eloquent"],
     "license": "MIT",
     "authors": [
         {
-            "name": "Hootlex",
-            "email": "hootlex@icloud.com"
+            "name": "Tallium",
+            "email": "oleksandrm@tallium.com"
         }
     ],
     "autoload-dev": {
