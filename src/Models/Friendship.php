@@ -15,7 +15,7 @@ class Friendship extends Model
     /**
      * @var array
      */
-    protected $guarded = ['id', 'created_at', 'updated_at'];
+    protected $guarded = ['_id', 'created_at', 'updated_at'];
 
     /**
      * @param array $attributes

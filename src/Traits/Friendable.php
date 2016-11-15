@@ -426,7 +426,7 @@ trait Friendable
         $recipients  = $friendships->pluck('recipient_id')->all();
         $senders     = $friendships->pluck('sender_id')->all();
 
-        return $this->where('id', '!=', $this->getKey())->whereIn('id', array_merge($recipients, $senders));
+        return $this->where('_id', '!=', $this->getKey())->whereIn('_id', array_merge($recipients, $senders));
     }
     
     /**
@@ -451,7 +451,7 @@ trait Friendable
                                     )
                                 );
 
-        return $this->whereNotIn('id', [$this->getKey(), $other->getKey()])->whereIn('id', $mutualFriendships);
+        return $this->whereNotIn('_id', [$this->getKey(), $other->getKey()])->whereIn('_id', $mutualFriendships);
     }
 
     /**
@@ -493,7 +493,7 @@ trait Friendable
 //        );
 
 
-        return $this->whereIn('id', $fofIds)->whereNotIn('id', $friendIds);
+        return $this->whereIn('_id', $fofIds)->whereNotIn('_id', $friendIds);
     }
 
     /**
