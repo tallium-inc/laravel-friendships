@@ -22,7 +22,6 @@ install:
   - COMPOSER_DISCARD_CHANGES=1 composer install --dev --prefer-source --no-interaction
 
 before_script:
-  - mongo friendships_test
   - travis_retry composer self-update
   - travis_retry composer install --no-interaction
   - cp src/database/migrations/create_friendships_table.php vendor/laravel/laravel/database/migrations/2015_11_19_053825_create_friendships_table.php
