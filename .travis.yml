@@ -30,7 +30,7 @@ before_script:
   - cd -
 
 script:
-  - vendor/bin/phpunit --debug
+  - phpunit --verbose
 
 after_script:
   - vendor/bin/test-reporter
