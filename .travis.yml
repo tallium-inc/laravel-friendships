@@ -1,7 +1,14 @@
 language: php
 
 services:
-  - mysql
+  - mongodb
+
+addons:
+  apt:
+    sources:
+    - mongodb-3.0-precise
+    packages:
+    - mongodb-org-server
 
 php:
   - 5.6
@@ -19,7 +26,9 @@ install:
   - COMPOSER_DISCARD_CHANGES=1 composer install --dev --prefer-source --no-interaction
 
 before_script:
-  - mysql -e 'create database friendships_test;'
+  - pecl install mongodb
+  - travis_retry composer self-update
+  - travis_retry composer install --no-interaction
   - cp src/database/migrations/create_friendships_table.php vendor/laravel/laravel/database/migrations/2015_11_19_053825_create_friendships_table.php
   - yes | cp src/database/migrations/create_friendships_groups_table.php vendor/laravel/laravel/database/migrations/2015_11_19_053826_create_friendships_groups_table.php
   - yes | cp tests/config/friendships.php vendor/laravel/laravel/config/friendships.php
