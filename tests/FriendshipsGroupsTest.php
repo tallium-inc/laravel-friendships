@@ -10,8 +10,7 @@ use Illuminate\Foundation\Testing\DatabaseTransactions;
 class FriendshipsGroupsTest extends TestCase
 {
     use DatabaseTransactions;
-    
-    
+
     /** @test */
     public function user_can_add_a_friend_to_a_group()
     {
