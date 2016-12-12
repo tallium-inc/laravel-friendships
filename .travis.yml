@@ -30,7 +30,7 @@ before_script:
   - cd -
 
 script:
-  - phpunit --configuration phpunit.xml
+  - vendor/bin/phpunit
 
 after_script:
   - vendor/bin/test-reporter
